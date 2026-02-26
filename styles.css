@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #F5F5DC;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    width: 300px;
+    height: 500px;
+}
+
+/* Tallo */
+.stem {
+    position: absolute;
+    width: 8px;
+    height: 0;
+    background: linear-gradient(180deg, #2d5016, #4a7c24, #5a9c2a);
+    border-radius: 4px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    animation: growStem 1s ease-out 0.1s both;
+}
+
+@keyframes growStem {
+    from {
+        height: 0;
+    }
+    to {
+        height: 250px;
+    }
+}
+
+/* Hoja */
+.leaf {
+    position: absolute;
+    width: 60px;
+    height: 40px;
+    background: linear-gradient(145deg, #4CAF50, #2d5016);
+    border-radius: 0 100% 0 100%;
+    opacity: 0;
+    z-index: 2;
+    bottom: 120px;
+    left: 50%;
+    transform: translateX(-65px) rotate(-30deg) scaleX(0);
+    transform-origin: right center;
+    animation: growLeaf 0.6s ease-out 0.6s both;
+}
+
+@keyframes growLeaf {
+    0% {
+        opacity: 0;
+        transform: translateX(-65px) rotate(-30deg) scaleX(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-65px) rotate(-30deg) scaleX(1);
+    }
+}
+
+.flower {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    z-index: 5;
+}
+
+/* Centro de la flor */
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, #FFD700, #FFA500);
+    border-radius: 50%;
+    z-index: 10;
+    animation: fadeIn 0.5s ease-in 1.6s both;
+}
+
+/* Pétalos */
+.petal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80px;
+    height: 120px;
+    background: linear-gradient(145deg, #b33333, #7f0000);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    transform-origin: center center;
+    opacity: 0;
+}
+
+/* Posicionar cada pétalo en círculo */
+.petal-1 {
+    animation: openPetal1 0.8s ease-out 0.2s both;
+}
+
+.petal-2 {
+    animation: openPetal2 0.8s ease-out 0.3s both;
+}
+
+.petal-3 {
+    animation: openPetal3 0.8s ease-out 0.4s both;
+}
+
+.petal-4 {
+    animation: openPetal4 0.8s ease-out 0.5s both;
+}
+
+.petal-5 {
+    animation: openPetal5 0.8s ease-out 0.6s both;
+}
+
+.petal-6 {
+    animation: openPetal6 0.8s ease-out 0.7s both;
+}
+
+.petal-7 {
+    animation: openPetal7 0.8s ease-out 0.8s both;
+}
+
+.petal-8 {
+    animation: openPetal8 0.8s ease-out 0.9s both;
+}
+
+/* Animaciones de apertura de pétalos */
+@keyframes openPetal1 {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) translateY(-60px) scale(1) rotate(0deg);
+    }
+}
+
+@keyframes openPetal2 {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(45deg) translateY(-60px) scale(1);
+    }
+}
+
+@keyframes openPetal3 {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(90deg) translateY(-60px) scale(1);
+    }
+}
+
+@keyframes openPetal4 {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(135deg) translateY(-60px) scale(1);
+    }
+}
+
+@keyframes openPetal5 {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(180deg) translateY(-60px) scale(1);
+    }
+}
+
+@keyframes openPetal6 {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(225deg) translateY(-60px) scale(1);
+    }
+}
+
+@keyframes openPetal7 {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(270deg) translateY(-60px) scale(1);
+    }
+}
+
+@keyframes openPetal8 {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(315deg) translateY(-60px) scale(1);
+    }
+}
+
+/* Animación del centro */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* Efecto de pulso continuo en el centro */
+.center {
+    animation: fadeIn 0.5s ease-in 1.6s both, pulse 2s ease-in-out 2.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+}
